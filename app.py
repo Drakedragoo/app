@@ -1,27 +1,49 @@
 import os
 
-print(""" sabor express
+restaurantes = ['MDV','The Best']
+
+def exibir_nome_do_programa():
+ print("""Sabor MDV
 """)
-
-print("1.cadastrar restaurante")
-print("2.listar restaurante")
-print("3.ativar restaurante")
-print("4.sair")
-#https://fsymbols.com/pt/letras/
-
-opcao_escolhida = int(input('escolha uma opção: '))
-#print('você escolheu a opçao', opcao_escolhida)
-#print(f'ocê escolheu a opção {opcao_escolhida})
+def exibir_opcoes():
+ print('1. Cadastrar restaurante')
+ print('2. Listar restaurante')
+ print('3. Ativar restaurante')
+ print('4. Sair')
 
 def finaliza_app():
-    os.system('cls') #os.system('clear')
-    print('encerrando o programa\n')
+   exibir_subtitulo('Finalizar App')
 
-if opcao_escolhida == 1:    
-    print('cadastrar restaurante')
-elif opcao_escolhida == 2:    
-    print('listar restantes')
-elif opcao_escolhida == 3:    
-    print('ativar restaurantes')
-else:    
-    finaliza_app()
+   def voltar_ao_menu_principal():
+      input('\n Digite a tecla "Enter" para voltar ao menu principal')
+      main()
+
+
+opcao_escolhida = int(input('Escolha uma opção: '))
+#print('Você escolheu a opção', opcao_escolhida)
+#print(f'Você escolheu a opção {opcao_escolhida}')
+
+def exibir_subtitulo(texto):
+    os.system('clear') #os.system('clear')
+    print(texto)
+    print()
+
+def escolher_opcao():
+   
+ if opcao_escolhida == 1:
+     print('Cadastrar restaurante')
+ elif opcao_escolhida == 2:
+     print('Listar restaurantes')
+ elif opcao_escolhida == 3:
+     print('Ativar restaurantes')
+ else:
+     finaliza_app()
+
+def main():
+       os.system('clear')
+       exibir_nome_do_programa()
+       exibir_opcoes()
+       escolher_opcao()
+
+       if __name__ == '__main__':
+           main()
